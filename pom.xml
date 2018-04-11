@@ -189,6 +189,11 @@
                 <version>${version.vertx}</version>
             </dependency>
             <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-mail-client</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-codec-http</artifactId>
                 <version>${version.netty}</version>
