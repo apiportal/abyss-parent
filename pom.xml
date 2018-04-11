@@ -189,6 +189,16 @@
                 <version>${version.vertx}</version>
             </dependency>
             <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-service-proxy</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-codegen</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-codec-http</artifactId>
                 <version>${version.netty}</version>
@@ -416,9 +426,11 @@
                     <generatedSourcesDirectory>
                         ${project.basedir}/src/main/generated
                     </generatedSourcesDirectory>
+<!--
                     <compilerArgs>
-                        <arg>-AoutputDirectory=${project.basedir}/src/main</arg>
+                        <arg>-Acodegen.output=${project.basedir}/src/main</arg>
                     </compilerArgs>
+-->
                 </configuration>
             </plugin>
 
