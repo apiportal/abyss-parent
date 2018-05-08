@@ -653,4 +653,19 @@
         </resources>
     </build>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>InternalSnapshots</id>
+            <name>Internal Snapshots</name>
+            <url>http://nexus.verapi.com:8081/repository/maven-snapshots/</url>
+            <!--snapshots><enabled>true</enabled></snapshots -->
+        </snapshotRepository>
+        <repository>
+            <id>InternalReleases</id>
+            <name>Internal Releases</name>
+            <url>http://nexus.verapi.com:8081/repository/maven-releases/</url>
+            <!--releases><enabled>true</enabled></releases -->
+        </repository>
+    </distributionManagement>
+
 </project>
