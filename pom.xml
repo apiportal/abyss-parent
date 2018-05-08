@@ -73,6 +73,7 @@
         <version.resteasy-jaxrs>3.5.1.Final</version.resteasy-jaxrs>
 
         <version.assembly.plugin>3.1.0</version.assembly.plugin>
+        <version.deploy.plugin>2.8.2</version.deploy.plugin>
         <version.buildnumber.plugin>1.3</version.buildnumber.plugin>
         <version.clean.plugin>3.0.0</version.clean.plugin>
         <version.compiler.plugin>3.6.2</version.compiler.plugin>
@@ -380,6 +381,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>${version.assembly.plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${version.deploy.plugin}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
