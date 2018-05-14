@@ -176,12 +176,37 @@
             </dependency>
             <dependency>
                 <groupId>io.vertx</groupId>
+                <artifactId>vertx-web-templ-thymeleaf</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-auth-common</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-auth-jdbc</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-auth-jwt</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
                 <artifactId>vertx-service-discovery</artifactId>
                 <version>${version.vertx}</version>
             </dependency>
             <dependency>
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-sql-common</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-jdbc-client</artifactId>
                 <version>${version.vertx}</version>
             </dependency>
             <dependency>
@@ -202,6 +227,16 @@
             <dependency>
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-codegen</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-hazelcast</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-config</artifactId>
                 <version>${version.vertx}</version>
             </dependency>
             <dependency>
