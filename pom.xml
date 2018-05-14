@@ -60,7 +60,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.enforcer.plugin>3.0.0-M1</version.enforcer.plugin>
         <version.slf4j>1.7.25</version.slf4j>
-        <version.vertx>3.5.2-SNAPSHOT</version.vertx>
+        <version.vertx>3.5.1</version.vertx>
         <version.netty>4.1.22.Final</version.netty>
         <version.junit>4.12</version.junit>
         <version.logback>1.2.3</version.logback>
