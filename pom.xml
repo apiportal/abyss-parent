@@ -71,6 +71,7 @@
         <version.resteasy-vertx>3.5.1.Final</version.resteasy-vertx>
         <version.resteasy-wadl>3.5.1.Final</version.resteasy-wadl>
         <version.resteasy-jaxrs>3.5.1.Final</version.resteasy-jaxrs>
+        <version.org-reflections>0.9.10</version.org-reflections>
 
         <version.assembly.plugin>3.1.0</version.assembly.plugin>
         <version.deploy.plugin>2.8.2</version.deploy.plugin>
@@ -395,6 +396,11 @@
                 <groupId>ch.qos.logback.contrib</groupId>
                 <artifactId>logback-jackson</artifactId>
                 <version>0.1.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${version.org-reflections}</version>
             </dependency>
 <!--
             <dependency>
