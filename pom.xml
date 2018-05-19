@@ -92,6 +92,7 @@
         <version.maven-javadoc-plugin>3.0.0</version.maven-javadoc-plugin>
         <version.illegal-transitive-dependency-check>1.7.4</version.illegal-transitive-dependency-check>
         <version.maven-shade-plugin>3.1.0</version.maven-shade-plugin>
+        <!--<version.swagger-request-validator>1.4.2</version.swagger-request-validator>-->
     </properties>
     <reporting>
         <plugins>
@@ -401,6 +402,11 @@
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>
                 <version>${version.org-reflections}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.atlassian.oai</groupId>
+                <artifactId>swagger-request-validator-core</artifactId>
+                <version>${version.swagger-request-validator}</version>
             </dependency>
 <!--
             <dependency>
