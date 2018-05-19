@@ -93,6 +93,7 @@
         <version.illegal-transitive-dependency-check>1.7.4</version.illegal-transitive-dependency-check>
         <version.maven-shade-plugin>3.1.0</version.maven-shade-plugin>
         <!--<version.swagger-request-validator>1.4.2</version.swagger-request-validator>-->
+        <version.swagger-request-validator>2.0.0-rc1</version.swagger-request-validator>
     </properties>
     <reporting>
         <plugins>
