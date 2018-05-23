@@ -369,20 +369,27 @@
                 <artifactId>fast-classpath-scanner</artifactId>
                 <version>2.18.2</version>
             </dependency>
-            <dependency>
-                <groupId>io.swagger.core.v3</groupId>
-                <artifactId>swagger-core</artifactId>
-                <version>2.0.1</version>
-            </dependency>
+            <!--
+                        <dependency>
+                            <groupId>io.swagger.core.v3</groupId>
+                            <artifactId>swagger-core</artifactId>
+                            <version>2.0.1</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>io.swagger.core.v3</groupId>
+                            <artifactId>swagger-annotations</artifactId>
+                            <version>2.0.1</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>io.swagger</groupId>
+                            <artifactId>swagger-jaxrs</artifactId>
+                            <version>1.5.19</version>
+                        </dependency>
+            -->
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
                 <artifactId>swagger-annotations</artifactId>
                 <version>2.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-jaxrs</artifactId>
-                <version>1.5.19</version>
             </dependency>
             <dependency>
                 <groupId>com.internetitem</groupId>
@@ -409,21 +416,26 @@
                 <artifactId>swagger-request-validator-core</artifactId>
                 <version>${version.swagger-request-validator}</version>
             </dependency>
-<!--
             <dependency>
-                <groupId>io.swagger.core.v3</groupId>
-                <artifactId>swagger-jaxrs2</artifactId>
-                <version>2.0.0</version>
-                &lt;!&ndash;<scope>compile</scope>&ndash;&gt;
+                <groupId>com.networknt</groupId>
+                <artifactId>json-schema-validator</artifactId>
+                <version>0.1.19</version>
             </dependency>
--->
-<!--
-            <dependency>
-                <groupId>io.swagger.core.v3</groupId>
-                <artifactId>swagger-jaxrs2-servlet-initializer</artifactId>
-                <version>2.0.0</version>
-            </dependency>
--->
+            <!--
+                        <dependency>
+                            <groupId>io.swagger.core.v3</groupId>
+                            <artifactId>swagger-jaxrs2</artifactId>
+                            <version>2.0.0</version>
+                            &lt;!&ndash;<scope>compile</scope>&ndash;&gt;
+                        </dependency>
+            -->
+            <!--
+                        <dependency>
+                            <groupId>io.swagger.core.v3</groupId>
+                            <artifactId>swagger-jaxrs2-servlet-initializer</artifactId>
+                            <version>2.0.0</version>
+                        </dependency>
+            -->
         </dependencies>
     </dependencyManagement>
 
@@ -620,11 +632,11 @@
                     <generatedSourcesDirectory>
                         ${project.basedir}/src/main/generated
                     </generatedSourcesDirectory>
-<!--
-                    <compilerArgs>
-                        <arg>-Acodegen.output=${project.basedir}/src/main</arg>
-                    </compilerArgs>
--->
+                    <!--
+                                        <compilerArgs>
+                                            <arg>-Acodegen.output=${project.basedir}/src/main</arg>
+                                        </compilerArgs>
+                    -->
                 </configuration>
             </plugin>
 
