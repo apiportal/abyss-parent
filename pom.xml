@@ -75,6 +75,8 @@
         <version.swagger-request-validator>2.0.0-rc1</version.swagger-request-validator>
         <version.json-schema-validator>0.1.19</version.json-schema-validator>
         <version.snakeyaml>1.21</version.snakeyaml>
+        <version.jackson-core>2.9.5</version.jackson-core>
+        <version.swagger-parser>2.0.1</version.swagger-parser>
 
 
         <version.assembly.plugin>3.1.0</version.assembly.plugin>
@@ -196,6 +198,11 @@
             <dependency>
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-web</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-web-client</artifactId>
                 <version>${version.vertx}</version>
             </dependency>
             <dependency>
@@ -417,6 +424,24 @@
                             <version>1.5.19</version>
                         </dependency>
             -->
+<!--
+            <dependency>
+                <groupId>io.swagger.parser.v3</groupId>
+                <artifactId>swagger-parser</artifactId>
+                <version>${version.swagger-parser}</version>
+            </dependency>
+-->
+            <dependency>
+                <groupId>io.swagger.parser.v3</groupId>
+                <artifactId>swagger-parser-v3</artifactId>
+                <!--<version>2.0.0-rc3</version>-->
+                <version>2.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger.parser.v3</groupId>
+                <artifactId>swagger-parser-core</artifactId>
+                <version>2.0.1</version>
+            </dependency>
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
                 <artifactId>swagger-annotations</artifactId>
@@ -442,11 +467,13 @@
                 <artifactId>reflections</artifactId>
                 <version>${version.org-reflections}</version>
             </dependency>
+<!--
             <dependency>
                 <groupId>com.atlassian.oai</groupId>
                 <artifactId>swagger-request-validator-core</artifactId>
                 <version>${version.swagger-request-validator}</version>
             </dependency>
+-->
             <dependency>
                 <groupId>com.networknt</groupId>
                 <artifactId>json-schema-validator</artifactId>
@@ -456,6 +483,21 @@
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
                 <version>${version.snakeyaml}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${version.jackson-core}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${version.jackson-core}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.7</version>
             </dependency>
             <!--
                         <dependency>
