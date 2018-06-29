@@ -61,6 +61,8 @@
     </issueManagement>
 
     <properties>
+        <mavenBuildTimestamp>${maven.build.timestamp}</mavenBuildTimestamp>
+        <mavenBuildVersion>${project.version}</mavenBuildVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.slf4j>1.7.25</version.slf4j>
         <version.vertx>3.5.2</version.vertx>
@@ -886,6 +888,13 @@
                 <directory>${basedir}</directory>
                 <includes>
                     <include>abyss-portal-config.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>abyss-version.properties</include>
                 </includes>
             </resource>
             <resource>
