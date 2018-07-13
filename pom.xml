@@ -92,7 +92,7 @@
         <version.clean.plugin>3.1.0</version.clean.plugin>
         <version.compiler.plugin>3.7.0</version.compiler.plugin>
         <version.dependency.plugin>3.1.1</version.dependency.plugin>
-        <version.enforcer.plugin>3.0.0-M1</version.enforcer.plugin>
+        <version.enforcer.plugin>3.0.0-M2</version.enforcer.plugin>
         <version.install.plugin>2.5.2</version.install.plugin>
         <version.javadoc.plugin>2.10.4</version.javadoc.plugin>
         <version.resources.plugin>3.1.0</version.resources.plugin>
@@ -608,21 +608,26 @@
                         <execution>
                             <id>enforcer-transitives-check</id>
                             <goals>
-                                <goal>enforce</goal>
+                                <!--<goal>enforce</goal>-->
+                                <goal>display-info</goal>
                             </goals>
                             <phase>process-classes</phase>
+                            <!--<phase>verify</phase>-->
                             <configuration>
                                 <fail>true</fail>
                                 <rules>
                                     <illegalTransitiveDependencyCheck
                                             implementation="de.is24.maven.enforcer.rules.IllegalTransitiveDependencyCheck">
                                         <reportOnly>false</reportOnly>
+                                        <suppressTypesFromJavaRuntime>true</suppressTypesFromJavaRuntime>
                                         <regexIgnoredClasses>
                                             <regexIgnoredClass>javax\..+</regexIgnoredClass>
                                             <regexIgnoredClass>org.w3c.dom\..+</regexIgnoredClass>
                                             <regexIgnoredClass>io.netty.buffer.ByteBuf</regexIgnoredClass>
+                                            <regexIgnoredClass>org.elasticsearch\..+</regexIgnoredClass>
                                         </regexIgnoredClasses>
-                                        <useClassesFromLastBuild>true</useClassesFromLastBuild>
+                                        <useClassesFromLastBuild>false</useClassesFromLastBuild>
+                                        <listMissingArtifacts>true</listMissingArtifacts>
                                     </illegalTransitiveDependencyCheck>
                                 </rules>
                             </configuration>
