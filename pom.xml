@@ -65,7 +65,7 @@
         <mavenBuildVersion>${project.version}</mavenBuildVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.slf4j>1.7.25</version.slf4j>
-        <version.vertx>3.5.3.CR1</version.vertx>
+        <version.vertx>3.5.3</version.vertx>
         <version.netty>4.1.22.Final</version.netty>
         <version.junit>4.12</version.junit>
         <version.logback>1.2.3</version.logback>
@@ -83,6 +83,7 @@
         <version.snakeyaml>1.21</version.snakeyaml>
         <version.jackson-core>2.9.5</version.jackson-core>
         <version.swagger-parser>2.0.1</version.swagger-parser>
+        <version.elasticsearch-rest-high-level-client>6.3.1</version.elasticsearch-rest-high-level-client>
 
 
         <version.assembly.plugin>3.1.0</version.assembly.plugin>
@@ -509,6 +510,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>3.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${version.elasticsearch-rest-high-level-client}</version>
             </dependency>
             <!--
                         <dependency>
