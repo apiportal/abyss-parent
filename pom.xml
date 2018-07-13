@@ -71,7 +71,7 @@
         <version.logback>1.2.3</version.logback>
         <version.hazelcast>3.10.2</version.hazelcast>
         <version.postgresql>42.2.2</version.postgresql>
-        <version.rxjava2>2.1.14</version.rxjava2>
+        <version.rxjava2>2.1.16</version.rxjava2>
         <version.reactivestreams>1.0.2</version.reactivestreams>
         <version.resteasy-vertx>3.5.1.Final</version.resteasy-vertx>
         <version.resteasy-wadl>3.5.1.Final</version.resteasy-wadl>
@@ -83,7 +83,7 @@
         <version.snakeyaml>1.21</version.snakeyaml>
         <version.jackson-core>2.9.5</version.jackson-core>
         <version.swagger-parser>2.0.1</version.swagger-parser>
-        <version.elasticsearch-rest-high-level-client>6.3.1</version.elasticsearch-rest-high-level-client>
+        <version.elasticsearch>6.3.1</version.elasticsearch>
 
 
         <version.assembly.plugin>3.1.0</version.assembly.plugin>
@@ -512,10 +512,31 @@
                 <version>3.7</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>4.4.10</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-client</artifactId>
+                <version>${version.elasticsearch}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.elasticsearch.client</groupId>
                 <artifactId>elasticsearch-rest-high-level-client</artifactId>
-                <version>${version.elasticsearch-rest-high-level-client}</version>
+                <version>${version.elasticsearch}</version>
             </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${version.elasticsearch}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch-x-content</artifactId>
+                <version>${version.elasticsearch}</version>
+            </dependency>
+
             <!--
                         <dependency>
                             <groupId>io.swagger.core.v3</groupId>
