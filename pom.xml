@@ -79,7 +79,7 @@
         <version.org-reflections>0.9.11</version.org-reflections>
         <!--<version.swagger-request-validator>1.4.2</version.swagger-request-validator>-->
         <version.swagger-request-validator>2.0.0-rc1</version.swagger-request-validator>
-        <version.json-schema-validator>0.1.19</version.json-schema-validator>
+        <version.json-schema-validator>0.1.19.1-SNAPSHOT</version.json-schema-validator>
         <version.snakeyaml>1.21</version.snakeyaml>
         <version.jackson-core>2.9.5</version.jackson-core>
         <version.swagger-parser>2.0.1</version.swagger-parser>
