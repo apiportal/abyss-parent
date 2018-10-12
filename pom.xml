@@ -73,8 +73,11 @@
         <version.postgresql>42.2.2</version.postgresql>
         <version.rxjava2>2.1.16</version.rxjava2>
         <version.reactivestreams>1.0.2</version.reactivestreams>
+
         <version.owasp-java-encoder>1.2.2</version.owasp-java-encoder>
         <version.json-sanitizer>1.2.0</version.json-sanitizer>
+        <version.commons-text>1.5</version.commons-text>
+
         <version.resteasy-vertx>3.5.1.Final</version.resteasy-vertx>
         <version.resteasy-wadl>3.5.1.Final</version.resteasy-wadl>
         <version.resteasy-jaxrs>3.5.1.Final</version.resteasy-jaxrs>
@@ -412,6 +415,11 @@
                 <version>${version.json-sanitizer}</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${version.commons-text}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.jboss.resteasy</groupId>
                 <artifactId>resteasy-vertx</artifactId>
                 <version>${version.resteasy-vertx}</version>
@@ -620,8 +628,8 @@
                         <execution>
                             <id>enforcer-transitives-check</id>
                             <goals>
-                                <!--<goal>enforce</goal>-->
-                                <goal>display-info</goal>
+                                <goal>enforce</goal>
+                                <!--<goal>display-info</goal>-->
                             </goals>
                             <phase>process-classes</phase>
                             <configuration>
@@ -634,10 +642,10 @@
                                         <regexIgnoredClasses>
                                             <regexIgnoredClass>javax\..+</regexIgnoredClass>
                                             <regexIgnoredClass>org.w3c.dom\..+</regexIgnoredClass>
-                                            <regexIgnoredClass>io.netty.buffer.ByteBuf</regexIgnoredClass>
+                                            <regexIgnoredClass>io.netty.buffer.ByteBuf\..+</regexIgnoredClass>
                                             <regexIgnoredClass>org.elasticsearch\..+</regexIgnoredClass>
                                         </regexIgnoredClasses>
-                                        <useClassesFromLastBuild>true</useClassesFromLastBuild>
+                                        <useClassesFromLastBuild>false</useClassesFromLastBuild>
                                         <listMissingArtifacts>false</listMissingArtifacts>
                                     </illegalTransitiveDependencyCheck>
                                 </rules>
