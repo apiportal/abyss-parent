@@ -92,8 +92,9 @@
         <version.deploy.plugin>2.8.2</version.deploy.plugin>
         <version.buildnumber.plugin>1.3</version.buildnumber.plugin>
         <version.clean.plugin>3.1.0</version.clean.plugin>
-        <version.compiler.plugin>3.7.0</version.compiler.plugin>
+        <version.compiler.plugin>3.8.0</version.compiler.plugin>
         <version.dependency.plugin>3.1.1</version.dependency.plugin>
+        <version.maven-dependency-tree>3.0.1</version.maven-dependency-tree>
         <version.enforcer.plugin>3.0.0-M2</version.enforcer.plugin>
         <version.install.plugin>2.5.2</version.install.plugin>
         <version.javadoc.plugin>2.10.4</version.javadoc.plugin>
@@ -105,9 +106,10 @@
         <version.failsafe.plugin>2.21.0</version.failsafe.plugin>
         <version.maven-gpg-plugin.plugin>1.6</version.maven-gpg-plugin.plugin>
         <version.git-commit-id.plugin>2.2.4</version.git-commit-id.plugin>
-        <version.maven-project-info-reports-plugin>2.9</version.maven-project-info-reports-plugin>
+        <version.maven-project-info-reports-plugin>3.0.0</version.maven-project-info-reports-plugin>
         <version.maven-javadoc-plugin>3.0.0</version.maven-javadoc-plugin>
-        <version.illegal-transitive-dependency-check>1.7.4</version.illegal-transitive-dependency-check>
+        <!--<version.illegal-transitive-dependency-check>1.7.4</version.illegal-transitive-dependency-check>-->
+        <version.illegal-transitive-dependency-check>1.8.1-SNAPSHOT</version.illegal-transitive-dependency-check>
         <version.maven-shade-plugin>3.1.1</version.maven-shade-plugin>
         <version.license-maven-plugin>1.16</version.license-maven-plugin>
         <version.maven-jar-plugin>3.1.0</version.maven-jar-plugin>
@@ -148,10 +150,6 @@
             <!--                     <show>public</show> -->
             <!--                 </configuration> -->
             <!--             </plugin> -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
@@ -448,13 +446,13 @@
                             <version>1.5.19</version>
                         </dependency>
             -->
-<!--
-            <dependency>
-                <groupId>io.swagger.parser.v3</groupId>
-                <artifactId>swagger-parser</artifactId>
-                <version>${version.swagger-parser}</version>
-            </dependency>
--->
+            <!--
+                        <dependency>
+                            <groupId>io.swagger.parser.v3</groupId>
+                            <artifactId>swagger-parser</artifactId>
+                            <version>${version.swagger-parser}</version>
+                        </dependency>
+            -->
             <dependency>
                 <groupId>io.swagger.parser.v3</groupId>
                 <artifactId>swagger-parser-v3</artifactId>
@@ -491,13 +489,13 @@
                 <artifactId>reflections</artifactId>
                 <version>${version.org-reflections}</version>
             </dependency>
-<!--
-            <dependency>
-                <groupId>com.atlassian.oai</groupId>
-                <artifactId>swagger-request-validator-core</artifactId>
-                <version>${version.swagger-request-validator}</version>
-            </dependency>
--->
+            <!--
+                        <dependency>
+                            <groupId>com.atlassian.oai</groupId>
+                            <artifactId>swagger-request-validator-core</artifactId>
+                            <version>${version.swagger-request-validator}</version>
+                        </dependency>
+            -->
             <dependency>
                 <groupId>com.networknt</groupId>
                 <artifactId>json-schema-validator</artifactId>
@@ -548,6 +546,11 @@
                 <artifactId>elasticsearch-x-content</artifactId>
                 <version>${version.elasticsearch}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.maven.shared</groupId>
+                <artifactId>maven-dependency-tree</artifactId>
+                <version>${version.maven-dependency-tree}</version>
+            </dependency>
 
             <!--
                         <dependency>
@@ -583,13 +586,15 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>${version.enforcer.plugin}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>de.is24.maven.enforcer.rules</groupId>
-                            <artifactId>illegal-transitive-dependency-check</artifactId>
-                            <version>${version.illegal-transitive-dependency-check}</version>
-                        </dependency>
-                    </dependencies>
+                    <!--
+                                        <dependencies>
+                                            <dependency>
+                                                <groupId>de.is24.maven.enforcer.rules</groupId>
+                                                <artifactId>illegal-transitive-dependency-check</artifactId>
+                                                <version>${version.illegal-transitive-dependency-check}</version>
+                                            </dependency>
+                                        </dependencies>
+                    -->
                     <executions>
                         <execution>
                             <id>enforce-maven</id>
@@ -617,32 +622,34 @@
                                 </rules>
                             </configuration>
                         </execution>
-                        <execution>
-                            <id>enforcer-transitives-check</id>
-                            <goals>
-                                <!--<goal>enforce</goal>-->
-                                <goal>display-info</goal>
-                            </goals>
-                            <phase>process-classes</phase>
-                            <configuration>
-                                <fail>true</fail>
-                                <rules>
-                                    <illegalTransitiveDependencyCheck
-                                            implementation="de.is24.maven.enforcer.rules.IllegalTransitiveDependencyCheck">
-                                        <reportOnly>false</reportOnly>
-                                        <suppressTypesFromJavaRuntime>true</suppressTypesFromJavaRuntime>
-                                        <regexIgnoredClasses>
-                                            <regexIgnoredClass>javax\..+</regexIgnoredClass>
-                                            <regexIgnoredClass>org.w3c.dom\..+</regexIgnoredClass>
-                                            <regexIgnoredClass>io.netty.buffer.ByteBuf</regexIgnoredClass>
-                                            <regexIgnoredClass>org.elasticsearch\..+</regexIgnoredClass>
-                                        </regexIgnoredClasses>
-                                        <useClassesFromLastBuild>true</useClassesFromLastBuild>
-                                        <listMissingArtifacts>false</listMissingArtifacts>
-                                    </illegalTransitiveDependencyCheck>
-                                </rules>
-                            </configuration>
-                        </execution>
+                        <!--
+                                                <execution>
+                                                    <id>enforcer-transitives-check</id>
+                                                    <goals>
+                                                        <goal>enforce</goal>
+                                                        &lt;!&ndash;<goal>display-info</goal>&ndash;&gt;
+                                                    </goals>
+                                                    <phase>process-classes</phase>
+                                                    <configuration>
+                                                        <fail>true</fail>
+                                                        <rules>
+                                                            <illegalTransitiveDependencyCheck
+                                                                    implementation="de.is24.maven.enforcer.rules.IllegalTransitiveDependencyCheck">
+                                                                <reportOnly>false</reportOnly>
+                                                                <suppressTypesFromJavaRuntime>true</suppressTypesFromJavaRuntime>
+                                                                <regexIgnoredClasses>
+                                                                    <regexIgnoredClass>javax\..+</regexIgnoredClass>
+                                                                    <regexIgnoredClass>org.w3c.dom\..+</regexIgnoredClass>
+                                                                    <regexIgnoredClass>io.netty.buffer.ByteBuf\..+</regexIgnoredClass>
+                                                                    <regexIgnoredClass>org.elasticsearch\..+</regexIgnoredClass>
+                                                                </regexIgnoredClasses>
+                                                                <useClassesFromLastBuild>false</useClassesFromLastBuild>
+                                                                <listMissingArtifacts>true</listMissingArtifacts>
+                                                            </illegalTransitiveDependencyCheck>
+                                                        </rules>
+                                                    </configuration>
+                                                </execution>
+                        -->
                     </executions>
                 </plugin>
                 <plugin>
@@ -665,10 +672,29 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${version.compiler.plugin}</version>
                 </plugin>
+                <!--
+                                <plugin>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-dependency-plugin</artifactId>
+                                    <version>${version.dependency.plugin}</version>
+                                </plugin>
+                -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>${version.dependency.plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>analyze</id>
+                            <goals>
+                                <goal>analyze-only</goal>
+                            </goals>
+                            <configuration>
+                                <failOnWarning>true</failOnWarning>
+                                <outputXML>true</outputXML>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -736,6 +762,11 @@
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${version.maven-site-plugin}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${version.maven-jar-plugin}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -743,11 +774,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${version.maven-jar-plugin}</version>
-                <!--<configuration>-->
-                    <!--<archive>-->
-                        <!--<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>-->
-                    <!--</archive>-->
-                <!--</configuration>-->
             </plugin>
             <plugin>
                 <groupId>pl.project13.maven</groupId>
