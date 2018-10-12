@@ -410,6 +410,11 @@
                 <version>${version.json-sanitizer}</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${version.commons-text}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.jboss.resteasy</groupId>
                 <artifactId>resteasy-vertx</artifactId>
                 <version>${version.resteasy-vertx}</version>
