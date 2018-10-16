@@ -19,3 +19,6 @@ buildNumber.properties
 .idea/copyright/profiles_settings.xml
 .idea/copyright/Verapi.xml
 .idea/scopes/Generic_Scope.xml
+.idea/dataSources/
+.idea/
+vpproject/abyss.vpp
