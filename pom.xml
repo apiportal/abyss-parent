@@ -65,7 +65,7 @@
         <mavenBuildVersion>${project.version}</mavenBuildVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.slf4j>1.7.25</version.slf4j>
-        <version.vertx>3.5.3</version.vertx>
+        <version.vertx>3.5.4</version.vertx>
         <version.netty>4.1.22.Final</version.netty>
         <version.junit>4.12</version.junit>
         <version.logback>1.2.3</version.logback>
@@ -80,11 +80,11 @@
         <version.resteasy-jaxrs>3.5.1.Final</version.resteasy-jaxrs>
         <version.org-reflections>0.9.11</version.org-reflections>
         <!--<version.swagger-request-validator>1.4.2</version.swagger-request-validator>-->
-        <version.swagger-request-validator>2.0.0-rc1</version.swagger-request-validator>
+        <!--<version.swagger-request-validator>2.0.0-rc1</version.swagger-request-validator>-->
         <version.json-schema-validator>0.1.19.1-SNAPSHOT</version.json-schema-validator>
         <version.snakeyaml>1.23</version.snakeyaml>
         <version.jackson-core>2.9.5</version.jackson-core>
-        <version.swagger-parser>2.0.1</version.swagger-parser>
+        <version.swagger>2.0.5</version.swagger>
         <version.elasticsearch>6.4.2</version.elasticsearch>
         <version.commons-text>1.5</version.commons-text>
 
@@ -462,18 +462,17 @@
             <dependency>
                 <groupId>io.swagger.parser.v3</groupId>
                 <artifactId>swagger-parser-v3</artifactId>
-                <!--<version>2.0.0-rc3</version>-->
-                <version>2.0.1</version>
+                <version>${version.swagger}</version>
             </dependency>
             <dependency>
                 <groupId>io.swagger.parser.v3</groupId>
                 <artifactId>swagger-parser-core</artifactId>
-                <version>2.0.1</version>
+                <version>${version.swagger}</version>
             </dependency>
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
                 <artifactId>swagger-annotations</artifactId>
-                <version>2.0.2</version>
+                <version>${version.swagger}</version>
             </dependency>
             <dependency>
                 <groupId>com.internetitem</groupId>
