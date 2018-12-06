@@ -85,7 +85,7 @@
         <version.snakeyaml>1.23</version.snakeyaml>
         <version.jackson-core>2.9.5</version.jackson-core>
         <version.swagger>2.0.5</version.swagger>
-        <version.elasticsearch>6.5.1</version.elasticsearch>
+        <version.elasticsearch>6.5.2</version.elasticsearch>
         <version.commons-text>1.5</version.commons-text>
 
 
