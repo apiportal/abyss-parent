@@ -65,8 +65,9 @@
         <mavenBuildVersion>${project.version}</mavenBuildVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.slf4j>1.7.25</version.slf4j>
-        <version.vertx>3.5.4</version.vertx>
+        <version.vertx>3.6.0</version.vertx>
         <version.netty>4.1.22.Final</version.netty>
+        <version.netty-boringssl>2.0.20.Final</version.netty-boringssl>
         <version.junit>4.12</version.junit>
         <version.logback>1.2.3</version.logback>
         <version.hazelcast>3.10.2</version.hazelcast>
@@ -84,7 +85,8 @@
         <version.json-schema-validator>0.1.19.1-SNAPSHOT</version.json-schema-validator>
         <version.snakeyaml>1.23</version.snakeyaml>
         <version.jackson-core>2.9.5</version.jackson-core>
-        <version.swagger>2.0.5</version.swagger>
+        <version.swagger.core>2.0.6</version.swagger.core>
+        <version.swagger>2.0.7</version.swagger>
         <version.elasticsearch>6.5.2</version.elasticsearch>
         <version.commons-text>1.5</version.commons-text>
 
@@ -351,7 +353,7 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-tcnative-boringssl-static</artifactId>
-                <version>2.0.10.Final</version>
+                <version>${version.netty-boringssl}</version>
             </dependency>
             <dependency>
                 <groupId>com.hazelcast</groupId>
@@ -472,7 +474,7 @@
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
                 <artifactId>swagger-annotations</artifactId>
-                <version>${version.swagger}</version>
+                <version>${version.swagger.core}</version>
             </dependency>
             <dependency>
                 <groupId>com.internetitem</groupId>
