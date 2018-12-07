@@ -65,7 +65,7 @@
         <mavenBuildVersion>${project.version}</mavenBuildVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.slf4j>1.7.25</version.slf4j>
-        <version.vertx>3.6.0</version.vertx>
+        <version.vertx>3.5.4</version.vertx>
         <version.netty>4.1.22.Final</version.netty>
         <version.netty-boringssl>2.0.20.Final</version.netty-boringssl>
         <version.junit>4.12</version.junit>
