@@ -12,15 +12,5 @@ buildNumber.properties
 .settings/
 .vertx/
 *.log
-.idea/libraries/
-.idea/workspace.xml
-.idea/uiDesigner.xml
-.idea/compiler.xml
-.idea/copyright/profiles_settings.xml
-.idea/copyright/Verapi.xml
-.idea/scopes/Generic_Scope.xml
-.idea/dataSources/
 .idea/
 vpproject/abyss.vpp
-/.idea/encodings.xml
-/.idea/modules.xml
