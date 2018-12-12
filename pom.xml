@@ -182,6 +182,7 @@
 
     <modules>
         <module>../abyss-portal</module>
+        <module>../abyss-sql-builder</module>
     </modules>
 
     <dependencyManagement>

@@ -22,3 +22,5 @@ buildNumber.properties
 .idea/dataSources/
 .idea/
 vpproject/abyss.vpp
+/.idea/encodings.xml
+/.idea/modules.xml
