@@ -14,3 +14,5 @@ buildNumber.properties
 *.log
 .idea/
 vpproject/abyss.vpp
+/.idea
+/abyss.iml
