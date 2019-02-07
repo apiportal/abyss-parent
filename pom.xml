@@ -89,6 +89,7 @@
         <version.swagger>2.0.7</version.swagger>
         <version.elasticsearch>6.5.2</version.elasticsearch>
         <version.commons-text>1.6</version.commons-text>
+        <micrometer.version>1.1.2</micrometer.version>
 
 
         <version.assembly.plugin>3.1.0</version.assembly.plugin>
@@ -261,10 +262,27 @@
                 <artifactId>vertx-jdbc-client</artifactId>
                 <version>${version.vertx}</version>
             </dependency>
+<!--
             <dependency>
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-dropwizard-metrics</artifactId>
                 <version>${version.vertx}</version>
+            </dependency>
+-->
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-micrometer-metrics</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-influx</artifactId>
+                <version>${micrometer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-jmx</artifactId>
+                <version>${micrometer.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.vertx</groupId>
