@@ -191,6 +191,7 @@
         <module>../abyss-common</module>
         <module>../abyss-exception</module>
         <module>../verapi-website-be</module>
+        <module>../abyss-cassandra</module>
     </modules>
 
     <dependencyManagement>
