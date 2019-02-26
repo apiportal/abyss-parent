@@ -185,13 +185,13 @@
     </reporting>
 
     <modules>
-        <module>../abyss-portal</module>
-        <module>../abyss-sql-builder</module>
         <module>../abyss-logger</module>
-        <module>../abyss-common</module>
         <module>../abyss-exception</module>
-        <module>../verapi-website-be</module>
+        <module>../abyss-common</module>
         <module>../abyss-cassandra</module>
+        <module>../abyss-sql-builder</module>
+        <module>../verapi-website-be</module>
+        <module>../abyss-portal</module>
     </modules>
 
     <dependencyManagement>
