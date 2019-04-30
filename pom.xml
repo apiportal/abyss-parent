@@ -4,10 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <prerequisites>
-        <maven>3.3.9</maven>
-    </prerequisites>
-
     <groupId>com.verapi.abyss</groupId>
     <artifactId>abyss</artifactId>
     <version>1.0.0-SNAPSHOT</version>
@@ -67,12 +63,12 @@
         <version.slf4j>1.7.25</version.slf4j>
         <version.vertx>3.6.3</version.vertx>
         <version.netty>4.1.22.Final</version.netty>
-        <version.netty-boringssl>2.0.20.Final</version.netty-boringssl>
+        <version.netty-boringssl>2.0.25.Final</version.netty-boringssl>
         <version.junit>4.12</version.junit>
         <version.logback>1.2.3</version.logback>
         <version.hazelcast>3.10.2</version.hazelcast>
         <version.postgresql>42.2.5</version.postgresql>
-        <version.rxjava2>2.2.7</version.rxjava2>
+        <version.rxjava2>2.2.8</version.rxjava2>
         <version.reactivestreams>1.0.2</version.reactivestreams>
         <version.owasp-java-encoder>1.2.2</version.owasp-java-encoder>
         <version.json-sanitizer>1.2.0</version.json-sanitizer>
@@ -83,13 +79,15 @@
         <!--<version.swagger-request-validator>1.4.2</version.swagger-request-validator>-->
         <!--<version.swagger-request-validator>2.0.0-rc1</version.swagger-request-validator>-->
         <version.json-schema-validator>0.1.23.1-SNAPSHOT</version.json-schema-validator>
-        <version.snakeyaml>1.23</version.snakeyaml>
+        <version.snakeyaml>1.24</version.snakeyaml>
         <version.jackson-core>2.9.8</version.jackson-core>
-        <version.swagger.core>2.0.7</version.swagger.core>
-        <version.swagger>2.0.9</version.swagger>
+        <version.swagger.core>2.0.8</version.swagger.core>
+        <version.swagger>2.0.12</version.swagger>
         <version.elasticsearch>6.5.2</version.elasticsearch>
         <version.commons-text>1.6</version.commons-text>
-        <micrometer.version>1.1.3</micrometer.version>
+        <micrometer.version>1.1.4</micrometer.version>
+        <version.jansi>1.18</version.jansi>
+        <version.cassandra-driver-extras>3.7.1</version.cassandra-driver-extras>
 
 
         <version.assembly.plugin>3.1.0</version.assembly.plugin>
@@ -106,7 +104,7 @@
         <version.exec.plugin>1.6.0</version.exec.plugin>
         <version.surefire.plugin>2.21.0</version.surefire.plugin>
         <version.surefire-report.plugin>2.21.0</version.surefire-report.plugin>
-        <versions-maven-plugin>2.5</versions-maven-plugin>
+        <versions-maven-plugin>2.7</versions-maven-plugin>
         <version.failsafe.plugin>2.21.0</version.failsafe.plugin>
         <version.maven-gpg-plugin.plugin>1.6</version.maven-gpg-plugin.plugin>
         <version.git-commit-id.plugin>2.2.4</version.git-commit-id.plugin>
@@ -119,6 +117,7 @@
         <version.maven-jar-plugin>3.1.0</version.maven-jar-plugin>
         <version.maven-site-plugin>3.7.1</version.maven-site-plugin>
         <version.maven-source-plugin>3.0.1</version.maven-source-plugin>
+        <version.flatten-maven-plugin>1.1.0</version.flatten-maven-plugin>
     </properties>
     <reporting>
         <plugins>
@@ -184,6 +183,7 @@
         </plugins>
     </reporting>
 
+<!--
     <modules>
         <module>../abyss-logger</module>
         <module>../abyss-exception</module>
@@ -193,9 +193,11 @@
         <module>../verapi-website-be</module>
         <module>../abyss-portal</module>
     </modules>
+-->
 
     <dependencyManagement>
         <dependencies>
+<!--
             <dependency>
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-dependencies</artifactId>
@@ -203,6 +205,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+-->
             <dependency>
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-core</artifactId>
@@ -263,13 +266,13 @@
                 <artifactId>vertx-jdbc-client</artifactId>
                 <version>${version.vertx}</version>
             </dependency>
-<!--
-            <dependency>
-                <groupId>io.vertx</groupId>
-                <artifactId>vertx-dropwizard-metrics</artifactId>
-                <version>${version.vertx}</version>
-            </dependency>
--->
+            <!--
+                        <dependency>
+                            <groupId>io.vertx</groupId>
+                            <artifactId>vertx-dropwizard-metrics</artifactId>
+                            <version>${version.vertx}</version>
+                        </dependency>
+            -->
             <dependency>
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-micrometer-metrics</artifactId>
@@ -298,6 +301,7 @@
             <dependency>
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-codegen</artifactId>
+                <classifier>processor</classifier>
                 <version>${version.vertx}</version>
             </dependency>
             <dependency>
@@ -338,7 +342,7 @@
             <dependency>
                 <groupId>com.datastax.cassandra</groupId>
                 <artifactId>cassandra-driver-extras</artifactId>
-                <version>3.6.0</version>
+                <version>${version.cassandra-driver-extras}</version>
             </dependency>
             <dependency>
                 <groupId>net.jpountz.lz4</groupId>
@@ -420,6 +424,7 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${version.junit}</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>io.vertx</groupId>
@@ -440,7 +445,7 @@
             <dependency>
                 <groupId>org.fusesource.jansi</groupId>
                 <artifactId>jansi</artifactId>
-                <version>1.17.1</version>
+                <version>${version.jansi}</version>
             </dependency>
             <dependency>
                 <groupId>io.reactivex.rxjava2</groupId>
@@ -576,12 +581,12 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.8.1</version>
+                <version>3.9</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpcore</artifactId>
-                <version>4.4.10</version>
+                <version>4.4.11</version>
             </dependency>
             <dependency>
                 <groupId>org.elasticsearch.client</groupId>
@@ -627,6 +632,7 @@
         </dependencies>
     </dependencyManagement>
 
+<!--
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -634,6 +640,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+-->
 
     <build>
         <pluginManagement>
@@ -829,13 +836,17 @@
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>${version.maven-jar-plugin}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>flatten-maven-plugin</artifactId>
+                    <version>${version.flatten-maven-plugin}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>${version.maven-jar-plugin}</version>
             </plugin>
             <plugin>
                 <groupId>pl.project13.maven</groupId>
@@ -1019,6 +1030,35 @@
                         <id>aggregate-download-licenses</id>
                         <goals>
                             <goal>aggregate-download-licenses</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>bom</flattenMode>
+                    <pomElements>
+                        <dependencies>resolve</dependencies>
+                        <dependencyManagement>resolve</dependencyManagement>
+                        <pluginManagement>resolve</pluginManagement>
+                    </pomElements>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
                         </goals>
                     </execution>
                 </executions>
