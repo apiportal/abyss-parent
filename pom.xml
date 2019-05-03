@@ -4,13 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+        <relativePath/>
+    </parent>
+
     <groupId>com.verapi.abyss</groupId>
-    <artifactId>abyss</artifactId>
+    <artifactId>abyss-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Verapi Abyss API Management Project</name>
-    <description>Verapi Abyss API Management Project</description>
+    <name>Abyss API Management Parent Project</name>
+    <description>Abyss API Management Parent Project</description>
     <url>https://apiportal.com</url>
 
     <organization>
@@ -20,47 +27,67 @@
 
     <licenses>
         <license>
-            <name>Verapi License Version 1.0</name>
-            <url>https://verapi.com/licenses/VPL-1.0.txt</url>
-            <distribution>manual</distribution>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
         </license>
     </licenses>
 
     <developers>
         <developer>
+            <id>HalilOzkan</id>
             <name>Halil ÖZKAN</name>
-            <id>halil.ozkan</id>
             <email>halil.ozkan@verapi.com</email>
-            <url>https://www.linkedin.com/in/halil-%C3%B6zkan-796bbb2/</url>
+            <url>https://github.com/HalilOzkan</url>
             <organization>Verapi</organization>
+            <organizationUrl>https://verapi.com</organizationUrl>
             <roles>
-                <role>Enterprise Architect</role>
+                <role>Developer</role>
             </roles>
             <timezone>+3</timezone>
         </developer>
         <developer>
+            <id>ismetfaik</id>
             <name>İsmet Faik SAĞLAR</name>
-            <id>faik.saglar</id>
             <email>faik.saglar@verapi.com</email>
-            <url>https://www.linkedin.com/in/ismet-faik-saglar-a799587/</url>
+            <url>https://github.com/ismetfaik</url>
             <organization>Verapi</organization>
             <roles>
-                <role>Software Architect</role>
+                <role>Developer</role>
             </roles>
             <timezone>+3</timezone>
         </developer>
     </developers>
 
+    <scm>
+        <connection>scm:git:https://github.com/apiportal/abyss-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/apiportal/abyss-parent.git</developerConnection>
+        <url>https://github.com/apiportal/abyss-parent</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <issueManagement>
-        <system>jira</system>
-        <url>https://jira.verapi.com:18443</url>
+        <system>GitHub Issues</system>
+        <url>https://github.com/apiportal/abyss-parent/issues</url>
     </issueManagement>
+
+    <ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/apiportal-ci/abyss-parent</url>
+    </ciManagement>
+
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <url>scm:git:https://github.com/apiportal/abyss-parent.git</url>
+        </site>
+    </distributionManagement>
 
     <properties>
         <mavenBuildTimestamp>${maven.build.timestamp}</mavenBuildTimestamp>
         <mavenBuildVersion>${project.version}</mavenBuildVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.slf4j>1.7.25</version.slf4j>
+        <version.slf4j>1.7.26</version.slf4j>
         <version.vertx>3.6.3</version.vertx>
         <version.netty>4.1.22.Final</version.netty>
         <version.netty-boringssl>2.0.25.Final</version.netty-boringssl>
@@ -88,14 +115,15 @@
         <micrometer.version>1.1.4</micrometer.version>
         <version.jansi>1.18</version.jansi>
         <version.cassandra-driver-extras>3.7.1</version.cassandra-driver-extras>
-
+        <version.commons-lang3>3.9</version.commons-lang3>
+        <version.httpcore>4.4.11</version.httpcore>
 
         <version.assembly.plugin>3.1.0</version.assembly.plugin>
         <version.deploy.plugin>2.8.2</version.deploy.plugin>
         <version.buildnumber.plugin>1.3</version.buildnumber.plugin>
         <version.clean.plugin>3.1.0</version.clean.plugin>
         <version.compiler.plugin>3.8.0</version.compiler.plugin>
-        <version.dependency.plugin>3.1.1</version.dependency.plugin>
+        <version.maven-dependency-plugin>3.1.1</version.maven-dependency-plugin>
         <version.maven-dependency-tree>3.0.1</version.maven-dependency-tree>
         <version.enforcer.plugin>3.0.0-M2</version.enforcer.plugin>
         <version.install.plugin>2.5.2</version.install.plugin>
@@ -109,103 +137,32 @@
         <version.maven-gpg-plugin.plugin>1.6</version.maven-gpg-plugin.plugin>
         <version.git-commit-id.plugin>2.2.4</version.git-commit-id.plugin>
         <version.maven-project-info-reports-plugin>3.0.0</version.maven-project-info-reports-plugin>
-        <version.maven-javadoc-plugin>3.0.0</version.maven-javadoc-plugin>
+        <version.maven-javadoc-plugin>3.1.0</version.maven-javadoc-plugin>
         <!--<version.illegal-transitive-dependency-check>1.7.4</version.illegal-transitive-dependency-check>-->
         <version.illegal-transitive-dependency-check>1.8.1-SNAPSHOT</version.illegal-transitive-dependency-check>
-        <version.maven-shade-plugin>3.1.1</version.maven-shade-plugin>
+        <version.maven-shade-plugin>3.2.1</version.maven-shade-plugin>
         <version.license-maven-plugin>1.16</version.license-maven-plugin>
         <version.maven-jar-plugin>3.1.0</version.maven-jar-plugin>
         <version.maven-site-plugin>3.7.1</version.maven-site-plugin>
         <version.maven-source-plugin>3.0.1</version.maven-source-plugin>
-        <version.flatten-maven-plugin>1.1.0</version.flatten-maven-plugin>
-    </properties>
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${version.maven-project-info-reports-plugin}</version>
-            </plugin>
-            <!--             <plugin> -->
-            <!--                 <groupId>org.apache.maven.plugins</groupId> -->
-            <!--                 <artifactId>maven-javadoc-plugin</artifactId> -->
-            <!--                 <version>${version.maven-javadoc-plugin}</version> -->
-            <!--                 <configuration> -->
-            <!--                     <show>private</show> -->
-            <!--                     <nohelp>true</nohelp> -->
-            <!--                 </configuration> -->
-            <!--             </plugin> -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>analyze-report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-            <!--             <plugin> -->
-            <!--                 <groupId>org.apache.maven.plugins</groupId> -->
-            <!--                 <artifactId>maven-javadoc-plugin</artifactId> -->
-            <!--                 <configuration> -->
-            <!--                     <stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile> -->
-            <!--                     <show>public</show> -->
-            <!--                 </configuration> -->
-            <!--             </plugin> -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <reportSets>
-                    <reportSet>
-                        <id>integration-tests</id>
-                        <reports>
-                            <report>failsafe-report-only</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>${versions-maven-plugin}</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>dependency-updates-report</report>
-                            <report>plugin-updates-report</report>
-                            <report>property-updates-report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-        </plugins>
-    </reporting>
+        <!--<version.flatten-maven-plugin>1.1.0</version.flatten-maven-plugin>-->
+        <version.maven-scm-publish-plugin>3.0.0</version.maven-scm-publish-plugin>
+        <version.maven-release-plugin>2.5.3</version.maven-release-plugin>
 
-<!--
-    <modules>
-        <module>../abyss-logger</module>
-        <module>../abyss-exception</module>
-        <module>../abyss-common</module>
-        <module>../abyss-cassandra</module>
-        <module>../abyss-sql-builder</module>
-        <module>../verapi-website-be</module>
-        <module>../abyss-portal</module>
-    </modules>
--->
+        <site.path>snapshot</site.path>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
-<!--
-            <dependency>
-                <groupId>io.vertx</groupId>
-                <artifactId>vertx-dependencies</artifactId>
-                <version>${version.vertx}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
--->
+            <!--
+                        <dependency>
+                            <groupId>io.vertx</groupId>
+                            <artifactId>vertx-dependencies</artifactId>
+                            <version>${version.vertx}</version>
+                            <type>pom</type>
+                            <scope>import</scope>
+                        </dependency>
+            -->
             <dependency>
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-core</artifactId>
@@ -492,30 +449,6 @@
                 <artifactId>fast-classpath-scanner</artifactId>
                 <version>2.21</version>
             </dependency>
-            <!--
-                        <dependency>
-                            <groupId>io.swagger.core.v3</groupId>
-                            <artifactId>swagger-core</artifactId>
-                            <version>2.0.1</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>io.swagger.core.v3</groupId>
-                            <artifactId>swagger-annotations</artifactId>
-                            <version>2.0.1</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>io.swagger</groupId>
-                            <artifactId>swagger-jaxrs</artifactId>
-                            <version>1.5.19</version>
-                        </dependency>
-            -->
-            <!--
-                        <dependency>
-                            <groupId>io.swagger.parser.v3</groupId>
-                            <artifactId>swagger-parser</artifactId>
-                            <version>${version.swagger-parser}</version>
-                        </dependency>
-            -->
             <dependency>
                 <groupId>com.internetitem</groupId>
                 <artifactId>logback-elasticsearch-appender</artifactId>
@@ -536,13 +469,6 @@
                 <artifactId>reflections</artifactId>
                 <version>${version.org-reflections}</version>
             </dependency>
-            <!--
-                        <dependency>
-                            <groupId>com.atlassian.oai</groupId>
-                            <artifactId>swagger-request-validator-core</artifactId>
-                            <version>${version.swagger-request-validator}</version>
-                        </dependency>
-            -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
@@ -581,12 +507,12 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.9</version>
+                <version>${version.commons-lang3}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpcore</artifactId>
-                <version>4.4.11</version>
+                <version>${version.httpcore}</version>
             </dependency>
             <dependency>
                 <groupId>org.elasticsearch.client</groupId>
@@ -632,20 +558,155 @@
         </dependencies>
     </dependencyManagement>
 
-<!--
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
--->
+    <!--
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    -->
 
     <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-scm</artifactId>
+                <version>3.3.2</version>
+            </extension>
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-manager-plexus</artifactId>
+                <version>1.11.2</version>
+            </extension>
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-provider-gitexe</artifactId>
+                <version>1.11.2</version>
+            </extension>
+        </extensions>
+        <resources>
+            <resource>
+                <directory>${basedir}</directory>
+                <includes>
+                    <include>abyss-portal-config.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>abyss-version.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <excludes>
+                    <exclude>git.properties</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/logs</directory>
+                <excludes>
+                    <exclude>**/*</exclude>
+                </excludes>
+            </resource>
+        </resources>
         <pluginManagement>
             <plugins>
-                <!-- copy engineering from apiman START -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${version.maven-site-plugin}</version>
+                    <!--
+                                        <configuration>
+                                            <skipDeploy>true</skipDeploy>
+                                        </configuration>
+                    -->
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${version.surefire.plugin}</version>
+                    <configuration>
+                        <systemProperties>
+                            <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
+                        </systemProperties>
+                        <argLine>-Xmx1024m</argLine>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>${version.surefire-report.plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${version.assembly.plugin}</version>
+                </plugin>
+                <plugin>
+                    <!-- Deploy the web site -->
+                    <groupId>com.github.github</groupId>
+                    <artifactId>site-maven-plugin</artifactId>
+                    <version>0.12</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>site</goal>
+                            </goals>
+                            <!-- select the Maven phase in which the plugin will be executed -->
+                            <phase>site-deploy</phase>
+                            <configuration>
+                                <!-- Plugin configuration ges here -->
+
+                                <server>github</server>
+
+                                <!-- The commit message -->
+                                <message>Building site for ${project.version}</message>
+                                <!-- The location where the site is uploaded -->
+                                <path>${site.path}</path>
+                                <!-- Use merge or override the content -->
+                                <merge>true</merge>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${version.maven-gpg-plugin.plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                            <configuration>
+                                <keyname>${gpg.keyname}</keyname>
+                                <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                                <gpgArguments>
+                                    <arg>--pinentry-mode</arg>
+                                    <arg>loopback</arg>
+                                </gpgArguments>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-publish-plugin</artifactId>
+                    <version>${version.maven-scm-publish-plugin}</version>
+                    <configuration>
+                        <scmBranch>gh-pages</scmBranch>
+                    </configuration>
+                </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
@@ -723,11 +784,6 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>${version.assembly.plugin}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>${version.deploy.plugin}</version>
                 </plugin>
@@ -735,23 +791,69 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>${version.clean.plugin}</version>
+                    <configuration>
+                        <filesets>
+                            <fileset>
+                                <directory>${project.basedir}/logs</directory>
+                                <includes>
+                                    <include>**/*</include>
+                                </includes>
+                            </fileset>
+                            <fileset>
+                                <directory>${project.basedir}/.vertx</directory>
+                                <includes>
+                                    <include>**/*</include>
+                                </includes>
+                            </fileset>
+                            <fileset>
+                                <directory>${project.basedir}/file-uploads</directory>
+                                <includes>
+                                    <include>**/*</include>
+                                </includes>
+                            </fileset>
+                        </filesets>
+                    </configuration>
+                    <!-- <executions>
+                        <execution>
+                            <id>auto-clean</id>
+                            <phase>initialize</phase>
+                            <goals>
+                                <goal>clean</goal>
+                            </goals>
+                            <configuration>
+                                <filesets>
+                                    <fileset>
+                                        <directory>${project.basedir}/logs</directory>
+                                        <includes>
+                                            <include>**/*</include>
+                                        </includes>
+                                    </fileset>
+                                    <fileset>
+                                        <directory>${project.basedir}/.vertx</directory>
+                                        <includes>
+                                            <include>**/*</include>
+                                        </includes>
+                                    </fileset>
+                                    <fileset>
+                                        <directory>${project.basedir}/file-uploads</directory>
+                                        <includes>
+                                            <include>**/*</include>
+                                        </includes>
+                                    </fileset>
+                                </filesets>
+                            </configuration>
+                        </execution>
+                    </executions> -->
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${version.compiler.plugin}</version>
                 </plugin>
-                <!--
-                                <plugin>
-                                    <groupId>org.apache.maven.plugins</groupId>
-                                    <artifactId>maven-dependency-plugin</artifactId>
-                                    <version>${version.dependency.plugin}</version>
-                                </plugin>
-                -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>${version.dependency.plugin}</version>
+                    <version>${version.maven-dependency-plugin}</version>
                     <executions>
                         <execution>
                             <id>analyze</id>
@@ -774,6 +876,14 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>${version.maven-javadoc-plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -784,22 +894,6 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>${version.exec.plugin}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${version.surefire.plugin}</version>
-                    <configuration>
-                        <systemProperties>
-                            <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
-                        </systemProperties>
-                        <argLine>-Xmx1024m</argLine>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-report-plugin</artifactId>
-                    <version>${version.surefire-report.plugin}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -817,29 +911,39 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-gpg-plugin</artifactId>
-                    <version>${version.maven-gpg-plugin.plugin}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
-                    <version>${version.maven-shade-plugin}</version>
-                </plugin>
-                <!-- copy engineering from apiman END -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${version.maven-site-plugin}</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                            <configuration>
+                                <artifactSet/>
+                                <outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar
+                                </outputFile>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>${version.maven-jar-plugin}</version>
                 </plugin>
+                <!--<plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>flatten-maven-plugin</artifactId>
+                    <version>${version.flatten-maven-plugin}</version> </plugin> -->
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>flatten-maven-plugin</artifactId>
-                    <version>${version.flatten-maven-plugin}</version>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${version.maven-release-plugin}</version>
+                    <configuration>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <tagNameFormat>v@{project.version}</tagNameFormat>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <releaseProfiles>sonatype-oss-release</releaseProfiles>
+                        <goals>deploy</goals>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -878,16 +982,18 @@
                         <always>false</always>
                         <!-- Chars to displayed as the commit object id? 7 is git's default -->
                         <abbrev>7</abbrev>
-                        <!-- When the build is triggered while the repo is in "dirty state", append this suffix -->
+                        <!-- When the build is triggered while the repo is in "dirty state",
+                            append this suffix -->
                         <dirty>-dirty</dirty>
-                        <!-- Only consider tags matching the given pattern. This can be used to avoid leaking private tags from the repository. -->
+                        <!-- Only consider tags matching the given pattern. This can be used
+                            to avoid leaking private tags from the repository. -->
                         <match>*</match>
-                        <!-- When you run git-describe it only looks only for *annotated tags* by default -->
+                        <!-- When you run git-describe it only looks only for *annotated tags*
+                            by default -->
                         <tags>false</tags>
-                        <!--
-                        always print using the "tag-commits_from_tag-g_commit_id-maybe_dirty" format, even if "on" a tag.
-                        The distance will always be 0 if you're "on" the tag.
-                      -->
+                        <!-- always print using the "tag-commits_from_tag-g_commit_id-maybe_dirty"
+                            format, even if "on" a tag. The distance will always be 0 if you're "on"
+                            the tag. -->
                         <forceLongFormat>false</forceLongFormat>
                     </gitDescribe>
                 </configuration>
@@ -898,17 +1004,11 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <annotationProcessors>
-                        <annotationProcessor>io.vertx.codegen.CodeGenProcessor</annotationProcessor>
-                    </annotationProcessors>
-                    <generatedSourcesDirectory>
-                        ${project.basedir}/src/main/generated
-                    </generatedSourcesDirectory>
-                    <!--
-                                        <compilerArgs>
-                                            <arg>-Acodegen.output=${project.basedir}/src/main</arg>
-                                        </compilerArgs>
-                    -->
+                    <!-- <annotationProcessors> <annotationProcessor>io.vertx.codegen.CodeGenProcessor</annotationProcessor>
+                        </annotationProcessors> <generatedSourcesDirectory> ${project.basedir}/src/main/generated
+                        </generatedSourcesDirectory> -->
+                    <!-- <compilerArgs> <arg>-Acodegen.output=${project.basedir}/src/main</arg>
+                        </compilerArgs> -->
                 </configuration>
             </plugin>
             <plugin>
@@ -918,67 +1018,59 @@
                     <execution>
                         <id>attach-sources</id>
                         <phase>verify</phase>
+                        <!--<phase>package</phase>-->
                         <goals>
                             <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- copy engineering from apiman START -->
-            <!-- Enforcer-related stuff -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>3.3.9</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>enforce-java</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>1.8.0</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>auto-clean</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>${project.basedir}/logs</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>${project.basedir}/.vertx</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>${project.basedir}/file-uploads</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                        </fileset>
-                    </filesets>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <includes>
@@ -993,29 +1085,6 @@
                     </systemProperties>
                     <argLine>-Xmx512m</argLine>
                 </configuration>
-            </plugin>
-
-            <!-- copy engineering from apiman END -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                        <configuration>
-                            <keyname>${gpg.keyname}</keyname>
-                            <passphraseServerId>${gpg.keyname}</passphraseServerId>
-                            <gpgArguments>
-                                <arg>--pinentry-mode</arg>
-                                <arg>loopback</arg>
-                            </gpgArguments>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -1034,82 +1103,170 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--<plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>flatten-maven-plugin</artifactId>
+                <executions> <execution> <id>flatten</id> <phase>process-resources</phase>
+                <goals> <goal>flatten</goal> </goals> <configuration> <updatePomFile>true</updatePomFile>
+                <flattenMode>bom</flattenMode> <pomElements> <dependencies>resolve</dependencies>
+                <dependencyManagement>resolve</dependencyManagement> <pluginManagement>resolve</pluginManagement>
+                <build>resolve</build> <profiles>resolve</profiles> </pomElements> </configuration>
+                </execution> <execution> <id>flatten.clean</id> <phase>clean</phase> <goals>
+                <goal>clean</goal> </goals> </execution> </executions> </plugin> -->
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>flatten-maven-plugin</artifactId>
-                <configuration>
-                    <updatePomFile>true</updatePomFile>
-                    <flattenMode>bom</flattenMode>
-                    <pomElements>
-                        <dependencies>resolve</dependencies>
-                        <dependencyManagement>resolve</dependencyManagement>
-                        <pluginManagement>resolve</pluginManagement>
-                    </pomElements>
-                </configuration>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.doxia</groupId>
+                        <artifactId>doxia-module-markdown</artifactId>
+                        <version>1.8</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-gitexe</artifactId>
+                        <version>1.11.2</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-scm</artifactId>
+                        <version>3.3.2</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-manager-plexus</artifactId>
+                        <version>1.11.2</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
-                        <id>flatten</id>
-                        <phase>process-resources</phase>
+                        <id>stage-for-scm-publish</id>
+                        <phase>post-site</phase>
                         <goals>
-                            <goal>flatten</goal>
+                            <goal>stage</goal>
                         </goals>
+                        <configuration>
+                            <skipDeploy>false</skipDeploy>
+                        </configuration>
                     </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-publish-plugin</artifactId>
+                <executions>
                     <execution>
-                        <id>flatten.clean</id>
-                        <phase>clean</phase>
+                        <id>scm-publish</id>
+                        <phase>site-deploy</phase>
                         <goals>
-                            <goal>clean</goal>
+                            <goal>publish-scm</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${version.maven-shade-plugin}</version>
+            </plugin>
         </plugins>
-
-        <resources>
-            <resource>
-                <directory>${basedir}</directory>
-                <includes>
-                    <include>abyss-portal-config.properties</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>abyss-version.properties</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-                <excludes>
-                    <exclude>git.properties</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <directory>${project.basedir}/logs</directory>
-                <excludes>
-                    <exclude>**/*</exclude>
-                </excludes>
-            </resource>
-        </resources>
     </build>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>InternalSnapshots</id>
-            <name>Internal Snapshots</name>
-            <url>http://nexus.verapi.com:8081/repository/maven-snapshots/</url>
-            <!--snapshots><enabled>true</enabled></snapshots -->
-        </snapshotRepository>
-        <repository>
-            <id>InternalReleases</id>
-            <name>Internal Releases</name>
-            <url>http://nexus.verapi.com:8081/repository/maven-releases/</url>
-            <!--releases><enabled>true</enabled></releases -->
-        </repository>
-    </distributionManagement>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${version.maven-project-info-reports-plugin}</version>
+            </plugin>
+            <!--             <plugin> -->
+            <!--                 <groupId>org.apache.maven.plugins</groupId> -->
+            <!--                 <artifactId>maven-javadoc-plugin</artifactId> -->
+            <!--                 <version>${version.maven-javadoc-plugin}</version> -->
+            <!--                 <configuration> -->
+            <!--                     <show>private</show> -->
+            <!--                     <nohelp>true</nohelp> -->
+            <!--                 </configuration> -->
+            <!--             </plugin> -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>analyze-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <!--             <plugin> -->
+            <!--                 <groupId>org.apache.maven.plugins</groupId> -->
+            <!--                 <artifactId>maven-javadoc-plugin</artifactId> -->
+            <!--                 <configuration> -->
+            <!--                     <stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile> -->
+            <!--                     <show>public</show> -->
+            <!--                 </configuration> -->
+            <!--             </plugin> -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <id>integration-tests</id>
+                        <reports>
+                            <report>failsafe-report-only</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependency-updates-report</report>
+                            <report>plugin-updates-report</report>
+                            <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <profiles>
+        <profile>
+            <id>sonatype-oss-release</id>
+            <properties>
+                <site.path>release</site.path>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${version.maven-javadoc-plugin}</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${version.maven-gpg-plugin.plugin}</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
