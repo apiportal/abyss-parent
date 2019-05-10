@@ -73,7 +73,7 @@
 
     <ciManagement>
         <system>Travis CI</system>
-        <url>https://travis-ci.org/apiportal-ci/abyss-parent</url>
+        <url>https://travis-ci.org/apiportal/abyss-parent</url>
     </ciManagement>
 
     <distributionManagement>
@@ -108,11 +108,12 @@
         <version.jackson-core>2.9.8</version.jackson-core>
         <version.swagger.core>2.0.8</version.swagger.core>
         <version.swagger>2.0.12</version.swagger>
+        <version.swagger-parser>1.0.44</version.swagger-parser>
         <version.elasticsearch>6.5.2</version.elasticsearch>
         <version.commons-text>1.6</version.commons-text>
         <micrometer.version>1.1.4</micrometer.version>
         <version.jansi>1.18</version.jansi>
-        <version.cassandra-driver-extras>3.7.1</version.cassandra-driver-extras>
+        <version.cassandra-driver>3.7.1</version.cassandra-driver>
         <version.commons-lang3>3.9</version.commons-lang3>
         <version.httpcore>4.4.11</version.httpcore>
 
@@ -254,6 +255,11 @@
             </dependency>
             <dependency>
                 <groupId>io.vertx</groupId>
+                <artifactId>vertx-codegen</artifactId>
+                <version>${version.vertx}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
                 <artifactId>vertx-hazelcast</artifactId>
                 <version>${version.vertx}</version>
             </dependency>
@@ -290,7 +296,12 @@
             <dependency>
                 <groupId>com.datastax.cassandra</groupId>
                 <artifactId>cassandra-driver-extras</artifactId>
-                <version>${version.cassandra-driver-extras}</version>
+                <version>${version.cassandra-driver}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.datastax.cassandra</groupId>
+                <artifactId>cassandra-driver-core</artifactId>
+                <version>${version.cassandra-driver}</version>
             </dependency>
             <dependency>
                 <groupId>net.jpountz.lz4</groupId>
@@ -489,6 +500,11 @@
                 <groupId>io.swagger.parser.v3</groupId>
                 <artifactId>swagger-parser-core</artifactId>
                 <version>${version.swagger}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-parser</artifactId>
+                <version>${version.swagger-parser}</version>
             </dependency>
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
