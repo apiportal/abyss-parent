@@ -1288,6 +1288,22 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>verapi-release</id>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>InternalSnapshots</id>
+                    <name>Internal Snapshots</name>
+                    <url>http://nexus.verapi.com:8081/repository/maven-snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>InternalReleases</id>
+                    <name>Internal Releases</name>
+                    <url>http://nexus.verapi.com:8081/repository/maven-releases/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+
     </profiles>
 
 
