@@ -483,7 +483,7 @@
             </dependency>
             <dependency>
                 <groupId>com.verapi.abyss</groupId>
-                <artifactId>jabyss-json-schema-validator</artifactId>
+                <artifactId>abyss-json-schema-validator</artifactId>
                 <version>${version.json-schema-validator}</version>
             </dependency>
             <dependency>
