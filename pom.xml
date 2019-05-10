@@ -704,10 +704,6 @@
                             <configuration>
                                 <keyname>${gpg.keyname}</keyname>
                                 <passphraseServerId>${gpg.keyname}</passphraseServerId>
-                                <gpgArguments>
-                                    <arg>--pinentry-mode</arg>
-                                    <arg>loopback</arg>
-                                </gpgArguments>
                             </configuration>
                         </execution>
                     </executions>
@@ -1266,20 +1262,33 @@
             </build>
         </profile>
         <profile>
-            <id>verapi-release</id>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>InternalSnapshots</id>
-                    <name>Internal Snapshots</name>
-                    <url>http://nexus.verapi.com:8081/repository/maven-snapshots/</url>
-                </snapshotRepository>
-                <repository>
-                    <id>InternalReleases</id>
-                    <name>Internal Releases</name>
-                    <url>http://nexus.verapi.com:8081/repository/maven-releases/</url>
-                </repository>
-            </distributionManagement>
+            <id>gpg-pinentry-mode</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${version.maven-gpg-plugin.plugin}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
+
 
 </project>
