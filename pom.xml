@@ -111,10 +111,11 @@
         <version.swagger-parser>1.0.44</version.swagger-parser>
         <version.elasticsearch>6.5.2</version.elasticsearch>
         <version.commons-text>1.6</version.commons-text>
+        <version.commons-lang3>3.9</version.commons-lang3>
+        <version.commons-io>2.6</version.commons-io>
         <micrometer.version>1.1.4</micrometer.version>
         <version.jansi>1.18</version.jansi>
         <version.cassandra-driver>3.7.1</version.cassandra-driver>
-        <version.commons-lang3>3.9</version.commons-lang3>
         <version.httpcore>4.4.11</version.httpcore>
 
         <version.assembly.plugin>3.1.0</version.assembly.plugin>
@@ -432,6 +433,16 @@
                 <version>${version.commons-text}</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${version.commons-lang3}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${version.commons-io}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.jboss.resteasy</groupId>
                 <artifactId>resteasy-vertx</artifactId>
                 <version>${version.resteasy-vertx}</version>
@@ -520,11 +531,6 @@
                 <groupId>io.swagger.parser.v3</groupId>
                 <artifactId>swagger-parser-v2-converter</artifactId>
                 <version>${version.swagger}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>${version.commons-lang3}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
