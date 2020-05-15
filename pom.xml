@@ -105,7 +105,7 @@
         <version.org-reflections>0.9.11</version.org-reflections>
         <version.json-schema-validator>1.0.7.1-SNAPSHOT</version.json-schema-validator>
         <version.snakeyaml>1.24</version.snakeyaml>
-        <version.jackson-core>2.9.9</version.jackson-core>
+        <version.jackson-core>2.11.0</version.jackson-core>
         <version.swagger.core>2.0.8</version.swagger.core>
         <version.swagger>2.0.12</version.swagger>
         <version.swagger-parser>1.0.44</version.swagger-parser>
