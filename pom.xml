@@ -89,7 +89,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.slf4j>1.7.26</version.slf4j>
         <version.vertx>3.6.3</version.vertx>
-        <version.netty>4.1.22.Final</version.netty>
+        <version.netty>4.1.50.Final</version.netty>
         <version.netty-boringssl>2.0.25.Final</version.netty-boringssl>
         <version.junit>4.12</version.junit>
         <version.logback>1.2.3</version.logback>
