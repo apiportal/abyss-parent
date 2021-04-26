@@ -112,7 +112,7 @@
         <version.elasticsearch>6.5.2</version.elasticsearch>
         <version.commons-text>1.6</version.commons-text>
         <version.commons-lang3>3.9</version.commons-lang3>
-        <version.commons-io>2.6</version.commons-io>
+        <version.commons-io>2.7</version.commons-io>
         <micrometer.version>1.1.4</micrometer.version>
         <version.jansi>1.18</version.jansi>
         <version.cassandra-driver>3.7.1</version.cassandra-driver>
