@@ -98,7 +98,7 @@
         <version.rxjava2>2.2.8</version.rxjava2>
         <version.reactivestreams>1.0.2</version.reactivestreams>
         <version.owasp-java-encoder>1.2.2</version.owasp-java-encoder>
-        <version.json-sanitizer>1.2.0</version.json-sanitizer>
+        <version.json-sanitizer>1.2.2</version.json-sanitizer>
         <version.resteasy-vertx>3.5.1.Final</version.resteasy-vertx>
         <version.resteasy-wadl>3.5.1.Final</version.resteasy-wadl>
         <version.resteasy-jaxrs>3.5.1.Final</version.resteasy-jaxrs>
