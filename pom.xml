@@ -94,7 +94,7 @@
         <version.junit>4.12</version.junit>
         <version.logback>1.2.3</version.logback>
         <version.hazelcast>3.10.2</version.hazelcast>
-        <version.postgresql>42.2.5</version.postgresql>
+        <version.postgresql>42.2.25</version.postgresql>
         <version.rxjava2>2.2.8</version.rxjava2>
         <version.reactivestreams>1.0.2</version.reactivestreams>
         <version.owasp-java-encoder>1.2.2</version.owasp-java-encoder>
